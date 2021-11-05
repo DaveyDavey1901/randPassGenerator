@@ -33,4 +33,41 @@ Example: 1 = Just Characters, 1234 = all options.`)
     );
     if (--tryOnceMore > 0) generatePassword();
   }
+  //this line is to take the options selected by user (charChoice),
+  //split them into a string and place in array(userSelection) making sure the new array type is numbers.
+  //and then removes duplicated enteries and pushes the unique value to a new array(arrayfiltered)
+  //we alos making sure 1 option was picked.
+
+  var digits = charChoice.toString().split("");
+  var userSelection = digits.map(Number);
+
+  if (
+    (arrayFiltered = [...new Set(userSelection)].filter((n) => n > 0 && n < 5))
+  );
+  if (arrayFiltered.length < 1) {
+    alert(`You need to choose at least 1 of the options.  
+    
+    Try Again.`);
+    if (--tryOnceMore > 0) generatePassword();
+    // confirmation box to enourgh your selection is correct.
+  } else {
+    userConfirm = confirm(
+      `From the list of options you chose (${arrayFiltered})
+      
+Click ok if you're happy with this? or cancel to try again.
+      
+(1 = Characters | 2 = Numbers | 3 = Lowercase | 4 = Uppercase)`
+    );
+    console.log(charChoice);
+    console.log(tryOnceMore);
+    console.log(typeof digits);
+    console.log(digits);
+    console.log(typeof userSelection);
+    console.log(userSelection);
+    console.log(typeof arrayFiltered);
+    console.log(arrayFiltered);
+    console.log(typeof userConfirm);
+    console.log(userConfirm);
+  }
 }
+generatePassword();
