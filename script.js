@@ -85,6 +85,45 @@ Please Try again.`);
     var resultLo = arrayFiltered.some((e) => e === 3);
     var resultUp = arrayFiltered.some((e) => e === 4);
 
+    // For all options chosen.
+    if (resultCh && resultNum && resultLo && resultUp) {
+      pwdArray = character.concat(numberArr, upper, lower);
+    }
+    // For three options picked
+    else if (resultCh && resultNum && resultLo) {
+      pwdArray = character.concat(numberArr, lower);
+    } else if (resultCh && resultNum && resultUp) {
+      pwdArray = character.concat(numberArr, upper);
+    } else if (resultCh && resultUp && resultLo) {
+      pwdArray = character.concat(upper, lower);
+    } else if (resultNum && resultUp && resultLo) {
+      pwdArray = numberArr.concat(upper, lower);
+    }
+    // For two options picked.
+    else if (resultCh && resultNum) {
+      pwdArray = character.concat(numberArr);
+    } else if (resultCh && resultUp) {
+      pwdArray = character.concat(upper);
+    } else if (resultCh && resultUp) {
+      pwdArray = character.concat(lower);
+    } else if (resultUp && resultNum) {
+      pwdArray = upper.concat(numberArr);
+    } else if (resultUp && resultLo) {
+      pwdArray = upper.concat(lower);
+    } else if (resultNum && resultLo) {
+      pwdArray = numberArr.concat(lower);
+    }
+    // For just one option picked.
+    else if (resultCh) {
+      pwdArray = character;
+    } else if (resultNum) {
+      pwdArray = numberArr;
+    } else if (resultLo) {
+      pwdArray = lower;
+    } else if (resultUp) {
+      pwdArray = upper;
+    }
+
     console.log("picked", charChoice);
     console.log(typeof charChoice);
     console.log("attempts", tryOnceMore);
@@ -107,7 +146,7 @@ Please Try again.`);
     console.log("number result", resultNum);
     console.log("lower result", resultLo);
     console.log("upper result", resultUp);
+    console.log("the chosen arrays", pwdArray);
   }
 }
-
 generatePassword();
