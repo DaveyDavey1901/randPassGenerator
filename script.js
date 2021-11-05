@@ -79,6 +79,12 @@ Please choose between 8 and 128 characters`
 Please Try again.`);
       if (--tryOnceMore > 0) generatePassword();
     }
+    // variables to check to see which option values are present in the
+    var resultCh = arrayFiltered.some((e) => e === 1);
+    var resultNum = arrayFiltered.some((e) => e === 2);
+    var resultLo = arrayFiltered.some((e) => e === 3);
+    var resultUp = arrayFiltered.some((e) => e === 4);
+
     console.log("picked", charChoice);
     console.log(typeof charChoice);
     console.log("attempts", tryOnceMore);
@@ -93,6 +99,12 @@ Please Try again.`);
     console.log(typeof userConfirm);
     console.log("selected length", pwdLength);
     console.log(typeof pwdLength);
+    console.log("character result", resultCh);
+    console.log(typeof resultCh);
+    console.log("number result", resultNum);
+    console.log("lower result", resultLo);
+    console.log("upper result", resultUp);
   }
 }
+
 generatePassword();
