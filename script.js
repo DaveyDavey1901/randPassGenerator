@@ -57,7 +57,7 @@ Example: 1 = Just Characters, 1234 = all options.`)
     // confirmation box to enourgh your selection is correct.
   } else {
     userConfirm = confirm(
-      `From the list of options you chose (${arrayFiltered})
+      `From the list of options you chose ${arrayFiltered}
       
 Click ok if you're happy with this? or cancel to try again.
       
@@ -142,25 +142,20 @@ Please Try again.`);
     //this variable joins the password back together.
     var finalPwd = pwd.join("");
 
+    function UserInput(finalPwd) {
+      document.getElementById("password").textContent = finalPwd;
+    }
     console.log("picked", charChoice);
-    console.log(typeof charChoice);
     console.log("attempts", tryOnceMore);
-    console.log(typeof tryOnceMore);
-    console.log("user choice after be broken into a string", digits);
-    console.log(typeof digits);
+    console.log("user choice after its been broken into a string", digits);
     console.log("array converted to a number", userSelection);
-    console.log(typeof userSelection);
     console.log(
-      "filitered array after it been stripped of duplicated digits",
+      "filitered array after it has been stripped of duplicated digits",
       arrayFiltered
     );
-    console.log(typeof arrayFiltered);
     console.log("true or false is the choice correct", userConfirm);
-    console.log(typeof userConfirm);
     console.log("selected length of password", pwdLength);
-    console.log(typeof pwdLength);
     console.log("character result", resultCh);
-    console.log(typeof resultCh);
     console.log("number result", resultNum);
     console.log("lower result", resultLo);
     console.log("upper result", resultUp);
@@ -168,7 +163,23 @@ Please Try again.`);
     console.log(randomPwd);
     console.log("password array seperated", pwd);
     console.log("the final password joined together", finalPwd);
-
+    UserInput(finalPwd);
     return finalPwd;
   }
+}
+
+//following copy function was found on internet resource sites
+//MDN, W3Schools, i added in the chosen password to the alert box.
+var copy = document.querySelector("#copy");
+copy.addEventListener("click", function () {
+  copied();
+});
+
+function copied() {
+  document.getElementById("password").select();
+  document.execCommand("copy");
+  alert(`Your new ${pwdLength} character password shown below has been
+  copied to the clipboard. 
+  
+  ${finalPwd}`);
 }
