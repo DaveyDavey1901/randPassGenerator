@@ -14,12 +14,12 @@ var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 //prettier-ignore
 var getBtn = document.querySelector("#generate");
-
+//onlick start password function and then replace the placeholder with final password.
 getBtn.addEventListener("click", function () {
   finalPwd = generatePassword();
   document.getElementById("password").placeholder = finalPwd;
 });
-
+//start of function to generate a random password from the the given user response and arrays.
 function generatePassword() {
   var charChoice = Number(
     prompt(`Please choose from the following list of options. You can choose as many as you like.
@@ -131,14 +131,15 @@ Please Try again.`);
 
     // This next part checks the chosen password length (pwdLength) and looks in the (pwdArray)
     //where the chosen arrays have been merged and then randomly selects a letter and then pushes
-    //it to the(randomPwd) array, it will continue adding a character until the chosen number has been reached.
+    //it to the(randomPwd) array, it will continue adding a characters until the chosen number has been reached.
+    //it is then pushed back into a pwd array seperated.
     var pwd = [];
 
     for (var i = 0; i < pwdLength; i++) {
       randomPwd = pwdArray[Math.floor(Math.random() * pwdArray.length)];
       pwd.push(randomPwd);
     }
-
+    //this variable joins the password back together.
     var finalPwd = pwd.join("");
 
     console.log("picked", charChoice);
@@ -170,8 +171,4 @@ Please Try again.`);
 
     return finalPwd;
   }
-}
-
-function UserInput(finalPwd) {
-  document.getElementById("password").textContent = finalPwd;
 }
