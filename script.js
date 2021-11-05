@@ -58,16 +58,41 @@ Click ok if you're happy with this? or cancel to try again.
       
 (1 = Characters | 2 = Numbers | 3 = Lowercase | 4 = Uppercase)`
     );
-    console.log(charChoice);
-    console.log(tryOnceMore);
+    // this checks to see if everything is correct if not reruns the function(passwordMakeup)
+    if (userConfirm === false) generatePassword();
+    if (userConfirm === true) alert("Great let's move on");
+    // this next section gets you to chose how many characters you
+    //would like in the password.letters and values < 8 or > 128 will
+    //cause an error msg and you will be sent back to the start.
+    if (
+      (pwdLength = Number(
+        prompt(
+          `How long would you like your password to be?
+          
+Please choose between 8 and 128 characters`
+        )
+      ))
+    );
+    if (Number.isNaN(pwdLength) || pwdLength < 8 || pwdLength > 128) {
+      alert(`You have made an invalid selection! 
+      
+Please Try again.`);
+      if (--tryOnceMore > 0) generatePassword();
+    }
+    console.log("picked", charChoice);
+    console.log(typeof charChoice);
+    console.log("attempts", tryOnceMore);
+    console.log(typeof tryOnceMore);
+    console.log("user choice", digits);
     console.log(typeof digits);
-    console.log(digits);
+    console.log("user choice after", userSelection);
     console.log(typeof userSelection);
-    console.log(userSelection);
+    console.log("filitered choice", arrayFiltered);
     console.log(typeof arrayFiltered);
-    console.log(arrayFiltered);
+    console.log("true or false", userConfirm);
     console.log(typeof userConfirm);
-    console.log(userConfirm);
+    console.log("selected length", pwdLength);
+    console.log(typeof pwdLength);
   }
 }
 generatePassword();
