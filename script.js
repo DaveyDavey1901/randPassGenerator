@@ -89,15 +89,18 @@ Please Try again.`);
     console.log(typeof charChoice);
     console.log("attempts", tryOnceMore);
     console.log(typeof tryOnceMore);
-    console.log("user choice", digits);
+    console.log("user choice after be broken into a string", digits);
     console.log(typeof digits);
-    console.log("user choice after", userSelection);
+    console.log("array converted to a number", userSelection);
     console.log(typeof userSelection);
-    console.log("filitered choice", arrayFiltered);
+    console.log(
+      "filitered array after it been stripped of duplicated digits",
+      arrayFiltered
+    );
     console.log(typeof arrayFiltered);
-    console.log("true or false", userConfirm);
+    console.log("true or false is the choice correct", userConfirm);
     console.log(typeof userConfirm);
-    console.log("selected length", pwdLength);
+    console.log("selected length of password", pwdLength);
     console.log(typeof pwdLength);
     console.log("character result", resultCh);
     console.log(typeof resultCh);
