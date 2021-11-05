@@ -15,6 +15,11 @@ var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 //prettier-ignore
 var getBtn = document.querySelector("#generate");
 
+getBtn.addEventListener("click", function () {
+  finalPwd = generatePassword();
+  document.getElementById("password").placeholder = finalPwd;
+});
+
 function generatePassword() {
   var charChoice = Number(
     prompt(`Please choose from the following list of options. You can choose as many as you like.
@@ -124,6 +129,18 @@ Please Try again.`);
       pwdArray = upper;
     }
 
+    // This next part checks the chosen password length (pwdLength) and looks in the (pwdArray)
+    //where the chosen arrays have been merged and then randomly selects a letter and then pushes
+    //it to the(randomPwd) array, it will continue adding a character until the chosen number has been reached.
+    var pwd = [];
+
+    for (var i = 0; i < pwdLength; i++) {
+      randomPwd = pwdArray[Math.floor(Math.random() * pwdArray.length)];
+      pwd.push(randomPwd);
+    }
+
+    var finalPwd = pwd.join("");
+
     console.log("picked", charChoice);
     console.log(typeof charChoice);
     console.log("attempts", tryOnceMore);
@@ -147,6 +164,14 @@ Please Try again.`);
     console.log("lower result", resultLo);
     console.log("upper result", resultUp);
     console.log("the chosen arrays", pwdArray);
+    console.log(randomPwd);
+    console.log("password array seperated", pwd);
+    console.log("the final password joined together", finalPwd);
+
+    return finalPwd;
   }
 }
-generatePassword();
+
+function UserInput(finalPwd) {
+  document.getElementById("password").textContent = finalPwd;
+}
