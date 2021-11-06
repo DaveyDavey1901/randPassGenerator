@@ -2,10 +2,10 @@ var tryOnceMore = !4;
 // Start Password variable values:
 // prettier-ignore
 // Special characters
-var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 // prettier-ignore
 // Numeric characters
-var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var numberArr = [1,2,3,4,5,6,7,8,9,0];
 // prettier-ignore
 // Alphabetical characters
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -136,8 +136,9 @@ Please Try again.`);
     var pwd = [];
 
     for (var i = 0; i < pwdLength; i++) {
-      randomPwd = pwdArray[Math.floor(Math.random() * pwdArray.length)];
-      pwd.push(randomPwd);
+      pwd.push(
+        (randomPwd = pwdArray[Math.floor(Math.random() * pwdArray.length)])
+      );
     }
     //this variable joins the password back together.
     var finalPwd = pwd.join("");
@@ -145,23 +146,6 @@ Please Try again.`);
     function pwdShow(finalPwd) {
       document.getElementById("password").textContent = finalPwd;
     }
-    console.log("picked", charChoice);
-    console.log("attempts", tryOnceMore);
-    console.log("user choice after its been broken into a string", digits);
-    console.log("array converted to a number", userSelection);
-    console.log(
-      "filitered array after it has been stripped of duplicated digits",
-      arrayFiltered
-    );
-    console.log("true or false is the choice correct", userConfirm);
-    console.log("selected length of password", pwdLength);
-    console.log("character result", resultCh);
-    console.log("number result", resultNum);
-    console.log("lower result", resultLo);
-    console.log("upper result", resultUp);
-    console.log("the chosen arrays", pwdArray);
-    console.log("password array seperated", pwd);
-    console.log("the final password joined together", finalPwd);
     pwdShow(finalPwd);
     return finalPwd;
   }
