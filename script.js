@@ -1,11 +1,11 @@
-var tryOnceMore = 2;
+var tryOnceMore = !4;
 // Start Password variable values:
 // prettier-ignore
 // Special characters
 var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 // prettier-ignore
 // Numeric characters
-var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 // prettier-ignore
 // Alphabetical characters
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -142,7 +142,7 @@ Please Try again.`);
     //this variable joins the password back together.
     var finalPwd = pwd.join("");
 
-    function UserInput(finalPwd) {
+    function pwdShow(finalPwd) {
       document.getElementById("password").textContent = finalPwd;
     }
     console.log("picked", charChoice);
@@ -160,10 +160,9 @@ Please Try again.`);
     console.log("lower result", resultLo);
     console.log("upper result", resultUp);
     console.log("the chosen arrays", pwdArray);
-    console.log(randomPwd);
     console.log("password array seperated", pwd);
     console.log("the final password joined together", finalPwd);
-    UserInput(finalPwd);
+    pwdShow(finalPwd);
     return finalPwd;
   }
 }
