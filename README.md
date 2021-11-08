@@ -31,7 +31,7 @@ in the visuals below you can see the steps in which the generator runs.
  
 **A bit about what the function is doing.**
 
-The code visually..  on first sight does look a bit messey where the text for the alet, prompt and confirm boxes are... this is because ive used the `back tick` so how i typed   it in in the script will be how it will appear on the alert,prompt or confirm messages... this means it may not be indented at all and all the way to the left... i find using the "`"back tick a better option than "+".
+The code visually..  on first sight does look a bit messey where the text for the alet, prompt and confirm boxes are... this is because ive used the `back tick` so how i typed   it in in the script will be how it will appear on the alert,prompt or confirm messages... this means it may not be indented at all and all the way to the left... i find using the `back tick a better option than +.
 
 1.  fig4. this is the first image that is showing when there are lots of numbers, or duplicates or invalid numbers.. the function seperates the users choices first then moves them to another array but as a number.  Then later the function will remove all duplicate numbers and anything above 4 and move it again to a new array.  so it should only have 123 or 4 in it. you can see in fig 5.  in the example 16 numbers are entered but only one valid number which is (4)
 
