@@ -1,4 +1,4 @@
-var tryOnceMore = !4;
+var tryOnceMore = 4;
 // Start Password variable values:
 // prettier-ignore
 // Special characters
