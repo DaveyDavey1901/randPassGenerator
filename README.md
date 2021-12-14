@@ -1,5 +1,6 @@
 # randPassGenerator
-Random Password Generator
+link [Random Password Generator](https://daveydavey1901.github.io/randPassGenerator/)
+
 
 **Description**
 The project task was to create a random password generator. 
