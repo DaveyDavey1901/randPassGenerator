@@ -59,3 +59,6 @@ The code visually..  on first sight does look a bit messey where the text for th
 
 even though this could of been far simpler if i used other options like check boxes i enjoyed the challenge of doing it without using them and only using prompts,alerts and confirm boxs... i intend to tidy up the code as i learn more as well as try to make this into an impressive mini project.
 
+## License
+
+[MIT License](LICENSE)
